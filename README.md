@@ -2,19 +2,19 @@
 
 ## Project Structure
 quiz-app/<br>
-├── models/
-│ ├── quiz.js
-│ └── result.js
-├── controllers/
-│ ├── quizController.js
-│ └── resultController.js
-├── services/
-│ ├── quizService.js
-│ └── resultService.js
-├── config/
-│ └── db.js
-├── index.js
-└── package.json
+├── models/<br>
+│ ├── quiz.js<br>
+│ └── result.js<br>
+├── controllers/<br>
+│ ├── quizController.js<br>
+│ └── resultController.js<br>
+├── services/<br>
+│ ├── quizService.js<br>
+│ └── resultService.js<br>
+├── config/<br>
+│ └── db.js<br>
+├── index.js<br>
+└── package.json<br>
 
 ## Setup
 ### Prerequisites
