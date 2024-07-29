@@ -1,0 +1,71 @@
+paths:
+  /api/quiz:                
+    get:                 
+      tags:               
+        - Quiz          
+      summary: Get all quiz saved
+      produces:
+      - application/json
+      responses:
+        20x: 
+          description: Getting data successfully
+        50x:
+          description: Internal Server error
+    post:                 # endpoint request type (post request)
+      tags:               # Tag property
+        - Quiz            # Value of the tag
+      summary: Add new quiz
+      produces:
+      - application/json
+      parameters:         # request parameters
+      - in: body          # request body
+        title: Quiz title
+        questions: Add new questions data 
+        required: true
+        schema:           # Schema definition
+          $ref: '#/definitions/addQuiz' 
+      responses:          # server responses
+        200: 
+          description: Adding data successfully
+        201:
+          description: Adding data successfully
+        50x:
+          description: Internal Server error
+  /api/quiz/{id}:
+    get:                 
+      tags:               
+        - Quiz          
+      summary: Get quiz by ID
+      produces:
+      - application/json
+      parameters:  
+      - name: id
+        in: path
+        required: true
+      name: Get quiz data       
+      responses:
+        20x: 
+          description: Getting data successfully
+        40x:
+          description: Quiz data is not available
+        50x:
+          description: Internal Server error
+definitions:        # Schema defination for request body
+  addQuiz:
+    type: object
+    properties:
+      title:
+        type: string
+      questions:
+        type: array
+        items:
+          type: object
+          properties:
+            text:
+              type: string
+            options:
+              type: array
+              items: 
+                type: string
+            correct_option:
+              type: number

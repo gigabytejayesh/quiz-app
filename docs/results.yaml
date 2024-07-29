@@ -1,0 +1,59 @@
+paths:
+  /api/results/submit:
+    post:
+      tags:
+        - Result
+      summary: Add quiz result
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          quiz_id: Quiz ID
+          question_id: Question ID
+          selected_option: Selected option in number
+          user_id: User's ID
+          required: true
+          schema:
+            $ref: '#/definitions/submitResult'
+      responses:
+        '200':
+          description: Adding data successfully
+        '201':
+          description: Adding data successfully
+        50x:
+          description: Internal Server error
+  '/api/results/:quiz_id/:user_id':
+    get:
+      tags:
+        - Result
+      summary: Get quiz result
+      produces:
+        - application/json
+      parameters:
+        - name: quiz_id
+          in: path
+          required: true
+        - name: user_id
+          in: path
+          required: true
+      name: Get quiz result data
+      responses:
+        20x:
+          description: Getting data successfully
+        40x:
+          description: Quiz data is not available
+        50x:
+          description: Internal Server error
+
+definitions:
+  submitResult:
+    type: object
+    properties:
+      quiz_id:
+        type: number
+      question_id:
+        type: number
+      selected_option:
+        type: number
+      user_id:
+        type: number
