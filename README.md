@@ -1,7 +1,7 @@
 # Quiz App
 
 ## Project Structure
-quiz-app/
+quiz-app/<br>
 ├── models/
 │ ├── quiz.js
 │ └── result.js
